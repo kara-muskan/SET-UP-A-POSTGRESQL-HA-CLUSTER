@@ -30,6 +30,27 @@ sudo apt upgrade
 sudo apt install postgresql postgresql-contrib -y
 sudo systemctl stop postgresql
 ```
+-create a symlink of /usr/lib/postgresql/14/bin/ to /usr/sbin as it contains some tools used for Patroni
+```
+sudo ln -s /usr/lib/postgresql/14/bin/* /usr/sbin
+```
+-Install patroni on node1,node2,node3
+
+Before installing Patroni, you will need to install Python and other dependencies on node1, node2, node3
+```
+sudo apt -y install python3-pip python3-dev libpq-dev
+pip3 install --upgrade pip
+sudo pip install patroni
+sudo pip install python-etcd
+sudo pip install psycopg2
+```
+-Install etcd on node4
+```
+sudo apt install etcd -y
+```
+-Configure Etcd
+
+You can configure it by editing the file /etc/default/etcd
 
 
 
