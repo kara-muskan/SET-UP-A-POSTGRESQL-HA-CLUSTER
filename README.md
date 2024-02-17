@@ -19,5 +19,9 @@ etcd node:
 HAproxy:
 
 **STEPS**
+
 -Upgrade all nodes
+```
+sudo apt update
+sudo apt upgrade```
 
