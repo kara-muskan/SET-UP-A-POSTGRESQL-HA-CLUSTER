@@ -23,5 +23,7 @@ HAproxy:
 -Upgrade all nodes
 ```
 sudo apt update
-sudo apt upgrade```
+sudo apt upgrade
+```
+
 
