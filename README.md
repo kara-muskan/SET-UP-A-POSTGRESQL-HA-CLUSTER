@@ -25,5 +25,13 @@ HAproxy:
 sudo apt update
 sudo apt upgrade
 ```
+-Install Postgresql server software on node1,node2, and node3. Also, stop the Postgresql service after installation
+```
+sudo apt install postgresql postgresql-contrib -y
+sudo systemctl stop postgresql
+```
+
+
+
 
 
