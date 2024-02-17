@@ -51,6 +51,18 @@ sudo apt install etcd -y
 -Configure Etcd
 
 You can configure it by editing the file /etc/default/etcd
+```
+sudo nano /etc/default/etcd
+```
+and paste the configuration present in etcd file.
+Save and close the file then restart the Etcd service to apply the changes and You can also verify the status of the service using given command
+```
+sudo systemctl restart etcd
+sudo systemctl status etcd
+```
+-Configure Patroni
+
+
 
 
 
