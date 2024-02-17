@@ -2,9 +2,12 @@
 Setting up a High Availability (HA) cluster for PostgreSQL typically involves configuring multiple nodes to ensure data availability and reliability. In this tutorial, I deploy 3 PostgreSQL nodes with Patroni for HA, setting up etcd for consensus, and use HAProxy to manage client connections.
 
 **Prerequisites**:
+
 -3 postgresql cluster node (ubuntu 22.04 minimal install) and postgres14
+
 -1 etcd host (ubuntu 22.04 minimal install)
--1 haproxy host (ubuntu 22.04 minimal install)**
+
+-1 haproxy host (ubuntu 22.04 minimal install)
 
 **My IP Plan**
 
@@ -14,9 +17,9 @@ Postgresql and patroni node2: 10.10.0.182
 
 Postgresql and patroni node1: 10.10.0.183
 
-etcd node:
+etcd node: 10.10.0.184
 
-HAproxy:
+HAproxy: 10.10.0.185
 
 **STEPS**
 
@@ -85,6 +88,24 @@ sudo systemctl daemon-reload
 sudo systemctl start patroni
 sudo systemctl status patroni
 ```
+-Install haproxy on node5
+```
+sudo apt install haproxy -y
+```
+-Configure HAProxy
+
+You can configure it by editing its main configuration file
+```
+sudo nano /etc/haproxy/haproxy.cfg
+```
+put all the lines from the file name haproxy.cfg
+Save and close the file then restart the HAProxy service to apply the changes and verify the status 
+```
+sudo systemctl restart haproxy
+sudo systemctl status haproxy
+```
+-Verify PostgreSQL Cluster
+At this point, the PostgreSQL cluster is ready. Now, open your web browser and use the HAProxy server IP at http://10.10.0.185:7000 to access the HAProxy web interface.
 
 
 
