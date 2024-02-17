@@ -62,6 +62,31 @@ sudo systemctl status etcd
 ```
 -Configure Patroni
 
+Patroni uses a YML file to store its configuration. You will need to create a patroni.yml file on node1, node2, node3 with given command
+```
+sudo nano /etc/patroni.yml
+```
+and paste configuration present in patroni.yml file with proper IP address. Now create patroni data directory on node1,node2 and node3
+```
+sudo mkdir -p  /data/patroni
+sudo chown postgres:postgres /data/patroni/
+sudo chmod 700 /data/patroni/
+```
+-Create a Systemd Service File for Patroni
+
+you will need to create a systemd service file to manage the Patroni service on node1,node2,node3. You can create it with the following command
+```
+sudo nano /etc/systemd/system/patroni.service
+```
+paste lines present in patroni.service file
+Save and close the file then reload the systemd daemon, and start patroni service and PostgreSQL service on node1,node2,node3
+```
+sudo systemctl daemon-reload
+sudo systemctl start patroni
+sudo systemctl status patroni
+```
+
+
 
 
 
