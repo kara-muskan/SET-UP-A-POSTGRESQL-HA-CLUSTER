@@ -11,6 +11,8 @@ Setting up a High Availability (HA) cluster for PostgreSQL typically involves co
 
 **My IP Plan**
 
+note: for understanding purpose i have used this kind of IP address
+
 Postgresql and patroni node1: 10.10.0.181
 
 Postgresql and patroni node2: 10.10.0.182
