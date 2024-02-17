@@ -2,10 +2,10 @@ scope: postgres
 namespace: /db/
 name: node1
 restapi:
-  listen: 10.252.55.129:8008
-  connect_address: 10.252.55.129:8008
+  listen: 10.10.0.181:8008
+  connect_address: 10.10.0.181:8008
 etcd:
-  host: 10.252.54.174:2379
+  host: 10.10.0.184:2379
 bootstrap:
   dcs:
     ttl: 30
@@ -19,9 +19,9 @@ bootstrap:
     - data-checksums
   pg_hba:
     - host replication replicator   127.0.0.1/32 md5
-    - host replication replicator   10.252.55.129/0   md5
-    - host replication replicator   10.252.54.125/0   md5
-    - host replication replicator   10.252.54.87/0   md5
+    - host replication replicator   10.10.0.181/0   md5
+    - host replication replicator   10.10.0.182/0   md5
+    - host replication replicator   10.10.0.183/0   md5
     - host all all   0.0.0.0/0   md5
   users:
     admin:
@@ -30,8 +30,8 @@ bootstrap:
        - createrole
        - createdb
 postgresql:
-   listen: 10.252.55.129:5432
-   connect_address: 10.252.55.129:5432
+   listen: 10.10.0.181:5432
+   connect_address: 10.10.0.181:5432
    data_dir:     /data/patroni
    pgpass:     /tmp/pgpass
    authentication:
