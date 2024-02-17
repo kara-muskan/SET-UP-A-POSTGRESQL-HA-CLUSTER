@@ -8,6 +8,9 @@ Setting up a High Availability (HA) cluster for PostgreSQL typically involves co
 
 **My IP Plan**
 Postgresql and patroni node1: 10.10.0.181
+
 Postgresql and patroni node2: 10.10.0.182
+
 Postgresql and patroni node1: 10.10.0.183
+
 etcd node:
