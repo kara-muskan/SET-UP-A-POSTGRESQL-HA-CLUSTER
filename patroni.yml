@@ -37,10 +37,10 @@ postgresql:
    authentication:
     replication:
       username:   replicator
-      password:     "A1qaz2wsx3edc"
+      password:     "P@ssw0rd"
     superuser:
       username:   postgres
-      password:     "B1qaz2wsx3edc"
+      password:     "P@ssw0rd"
       parameters:
       unix_socket_directories:  '.'
 tags:
